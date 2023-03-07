@@ -122,7 +122,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     onSaved: (value) => email = value!,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   ElevatedButton(
                     child: const Text(
                       'Register',

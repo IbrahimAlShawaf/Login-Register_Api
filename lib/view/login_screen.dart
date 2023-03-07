@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     onSaved: (value) => password = value!,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   ElevatedButton(
                     child: const Text(
                       'Login',
@@ -102,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     },
                   ),
+                  const SizedBox(height: 16),
                   ElevatedButton(
                     child: const Text(
                       'Register',
