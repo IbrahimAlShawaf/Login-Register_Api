@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:user_api/view/auth/login_screen.dart';
 import 'package:user_api/view/home_page.dart';
-import 'package:user_api/view/register_screen.dart';
 
-import 'view/login_screen.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'User Demo Api',
       theme: ThemeData(
@@ -22,12 +24,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
       ),
       // home: const LoginPage(),
-      initialRoute: '/loginpage',
-      routes: {
-        '/loginpage': (context) => const LoginPage(),
-        '/registerpage': (context) => const RegisterPage(),
-        '/homepage': (context) => const HomePage(),
-      },
+      home: GetStorage().read('token') != null ? const HomePage() : const LoginScreen(),
+      // routes: {
+      //   '/loginpage': (context) => const LoginPage(),
+      //   '/registerpage': (context) => const RegisterPage(),
+      //   '/homepage': (context) => const HomePage(),
+      // },
     );
   }
 }
