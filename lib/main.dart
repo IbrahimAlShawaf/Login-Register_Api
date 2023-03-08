@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'User Demo Api',
       theme: ThemeData(
-        useMaterial3: true,
-        primarySwatch: Colors.indigo,
+       // useMaterial3: true,
+       // primarySwatch: Colors.indigo,
       ),
       // home: const LoginPage(),
       home: GetStorage().read('token') != null ? const HomePage() : const LoginScreen(),

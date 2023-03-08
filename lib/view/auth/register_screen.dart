@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,8 +45,10 @@ class _RegisterScreenState extends State<RegisterScreen> with Helpers {
           'REGISTER',
           style: GoogleFonts.actor(
             color: Colors.black,
+            fontSize: 24,
           ),
         ),
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -72,8 +73,8 @@ class _RegisterScreenState extends State<RegisterScreen> with Helpers {
                   fontSize: 15,
                 ),
               ),
-              const SizedBox(height: 20),
-              TextField(
+              const SizedBox(height: 40),
+              TextFormField(
                 keyboardType: TextInputType.name,
                 controller: _fullNameTextController,
                 decoration: InputDecoration(
@@ -96,7 +97,7 @@ class _RegisterScreenState extends State<RegisterScreen> with Helpers {
                 ),
               ),
               const SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 keyboardType: TextInputType.name,
                 controller: _emailTextController,
                 decoration: InputDecoration(
@@ -119,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> with Helpers {
                 ),
               ),
               const SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 controller: _passwordTextController,
                 keyboardType: TextInputType.text,
                 obscureText: true,
@@ -182,6 +183,17 @@ class _RegisterScreenState extends State<RegisterScreen> with Helpers {
                   ),
                 ),
                 child: const Text('REGISTER'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('have an account'),
+                  TextButton(
+                      onPressed: () {
+                        Get.to(() => const LoginScreen());
+                      },
+                      child: const Text('Login Now!'))
+                ],
               ),
             ],
           ),

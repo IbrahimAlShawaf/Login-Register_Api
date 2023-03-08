@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -10,8 +9,6 @@ import 'package:user_api/view/home_page.dart';
 import '../../utlis/helpers.dart';
 import 'forgot_password_screen.dart';
 import 'register_screen.dart';
-
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -47,14 +44,16 @@ class _LoginScreenState extends State<LoginScreen> with Helpers {
           'LOGIN',
           style: GoogleFonts.actor(
             color: Colors.black,
+            fontSize: 24,
           ),
         ),
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -73,8 +72,8 @@ class _LoginScreenState extends State<LoginScreen> with Helpers {
                   fontSize: 15,
                 ),
               ),
-              const SizedBox(height: 20),
-              TextField(
+              const SizedBox(height: 40),
+              TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailTextController,
                 decoration: InputDecoration(
@@ -97,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> with Helpers {
                 ),
               ),
               const SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 controller: _passwordTextController,
                 keyboardType: TextInputType.text,
                 obscureText: true,
